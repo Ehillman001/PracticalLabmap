@@ -26,23 +26,42 @@
     <script>
       // Initialize and add the map
       function initMap() {
-        // The location of Uluru
+        // The location of British Columbia
         const bc = { lat: 55.507, lng: -125.247 };
-        // The map, centered at Uluru
+        // The map, centered over British Columbia
         const map = new google.maps.Map(document.getElementById("map"), {
           zoom: 4,
           center: bc,
         });
-        // The marker, positioned at Uluru
-        const marker = new google.maps.Marker({
-          position: bc,
-          map: map,
-        });
+        const labels = "ABCDE";
+          // Add some markers to the map.
+          // Note: The code uses the JavaScript Array.prototype.map() method to
+          // create an array of markers based on a given "locations" array.
+          // The map() method here has nothing to do with the Google Maps API.
+          const markers = locations.map((location, i) => {
+            return new google.maps.Marker({
+              position: location,
+              label: labels[i % labels.length],
+            });
+          });
+          // Add a marker clusterer to manage the markers.
+          new MarkerClusterer(map, markers, {
+            imagePath:
+              "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
+          });
+        }
+        const locations = [
+          { lat:  51.530268, lng: -126.113613 },
+          { lat:  52.330785, lng: -120.570042 },
+          { lat:  57.732114, lng: -130.635669 },
+          { lat:  60.684903, lng: -138.520164 },
+          { lat:  52.334561, lng: -120.569570 },
+        ];
       }
     </script>
   </head>
   <body>
-    <h3>Active Volcanoes in Canada</h3>
+    <h3>Potentially Active Volcanoes in Canada</h3>
     <!--The div element for the map -->
     <div id="map"></div>
   </body>
