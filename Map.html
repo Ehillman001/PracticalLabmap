@@ -43,13 +43,15 @@
               position: location,
               label: labels[i % labels.length],
             });
+          });
     
           // Add a marker clusterer to manage the markers.
           new MarkerClusterer(map, markers, {
             imagePath:
               "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
           });
-        }
+         }
+      
         const locations = [
           { lat:  51.530268, lng: -126.113613 },
           { lat:  52.330785, lng: -120.570042 },
@@ -57,7 +59,7 @@
           { lat:  60.684903, lng: -138.520164 },
           { lat:  52.334561, lng: -120.569570 },
         ];
-      }
+    
     </script>
   </head>
   <body>
