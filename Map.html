@@ -21,6 +21,9 @@
         margin: 0;
         padding: 0;
       }
+      #h3 {
+        text-align: center;
+        color: red;
       }
     </style>
     <script>
@@ -32,19 +35,21 @@
         const map = new google.maps.Map(document.getElementById("map"), {
           zoom: 4,
           center: bc,
-          google.maps.MapTypeId.SATELLITE
+          //Adds the ability to choose the base map
+          mapTypeControlOptions: {
+          mapTypeIds: ["satellite", "hybrid", "terrain"],}
         });
         const labels = "ABCDE";
           // Add some markers to the map.
           // Note: The code uses the JavaScript Array.prototype.map() method to
           // create an array of markers based on a given "locations" array.
           // The map() method here has nothing to do with the Google Maps API.
-          const markers = locations.map((location, i) => {
-            return new google.maps.Marker({
-              position: location,
-              label: labels[i % labels.length],
-            });
+        const markers = locations.map((location, i) => {
+          return new google.maps.Marker({
+            position: location,
+            label: labels[i % labels.length],
           });
+        });
     
           // Add a marker clusterer to manage the markers.
           new MarkerClusterer(map, markers, {
