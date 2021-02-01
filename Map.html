@@ -34,6 +34,12 @@
       function initMap() {
         // The location of British Columbia
         const bc = { lat: 55.507, lng: -125.247 };
+        const silverthrone = { lat: 51.442, lng: -126.300 };
+        const wellsGray = { lat:  52.330, lng: -120.570 };
+        const edziza = { lat:  57.732114, lng: -130.635669 };
+        const rabbit = { lat:  61.918723, lng: -141.006147 };
+        const anahim = { lat:  52.758798, lng: -125.625000 };
+
         // The map, centered over British Columbia
         const map = new google.maps.Map(document.getElementById("map"), {
           zoom: 5,
@@ -42,34 +48,176 @@
           mapTypeControlOptions: {
           mapTypeIds: ["satellite", "hybrid", "terrain"],}
         });
-        const labels = "ABCDEF";
-          // Add some markers to the map.
-          // Note: The code uses the JavaScript Array.prototype.map() method to
-          // create an array of markers based on a given "locations" array.
-          // The map() method here has nothing to do with the Google Maps API.
-          const markers = locations.map((location, i) => {
-            return new google.maps.Marker({
-              position: location,
-              map: map,
-              label: labels[i % labels.length],
-            });
+        const contentStringOne =
+          '<div id="content">' +
+          '<div id="siteNotice">' +
+          "</div>" +
+          '<h1 id="firstHeading" class="firstHeading">Silverthrone Caldera</h1>' +
+          '<div id="bodyContent">' +
+          "<p><b>Silverthrone Caldera</b>, a volcano found in the <b>Garibaldi Volcanic belt</b>, is a large " +
+          "sandstone rock formation in the southern part of the " +
+          "Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) " +
+          "south west of the nearest large town, Alice Springs; 450&#160;km " +
+          "(280&#160;mi) by road. Kata Tjuta and Uluru are the two major " +
+          "features of the Uluru - Kata Tjuta National Park. Uluru is " +
+          "sacred to the Pitjantjatjara and Yankunytjatjara, the " +
+          "Aboriginal people of the area. It has many springs, waterholes, " +
+          "rock caves and ancient paintings. Uluru is listed as a World " +
+          "Heritage Site.</p>" +
+          '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">' +
+          "https://en.wikipedia.org/w/index.php?title=Uluru</a> " +
+          "(last visited June 22, 2009).</p>" +
+          "</div>" +
+          "</div>";
+        const infowindow = new google.maps.InfoWindow({
+          content: contentStringOne,
+        });
+        const contentStringTwo =
+          '<div id="content">' +
+          '<div id="siteNotice">' +
+          "</div>" +
+          '<h1 id="firstHeading" class="firstHeading">Wells Gray-Clearwater Volcanic Field</h1>' +
+          '<div id="bodyContent">' +
+          "<p><b>Wells Gray-Clearwater Volcanic Field</b> is a large potentially active volcanic field in central-east BC, situated north of Kamloops. " +
+          "sandstone rock formation in the southern part of the " +
+          "Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) " +
+          "south west of the nearest large town, Alice Springs; 450&#160;km " +
+          "(280&#160;mi) by road. Kata Tjuta and Uluru are the two major " +
+          "features of the Uluru - Kata Tjuta National Park. Uluru is " +
+          "sacred to the Pitjantjatjara and Yankunytjatjara, the " +
+          "Aboriginal people of the area. It has many springs, waterholes, " +
+          "rock caves and ancient paintings. Uluru is listed as a World " +
+          "Heritage Site.</p>" +
+          '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">' +
+          "https://en.wikipedia.org/w/index.php?title=Uluru</a> " +
+          "(last visited June 22, 2009).</p>" +
+          "</div>" +
+          "</div>";
+        const infowindowTwo = new google.maps.InfoWindow({
+          content: contentStringTwo,
+        });
+        const contentStringThree =
+          '<div id="content">' +
+          '<div id="siteNotice">' +
+          "</div>" +
+          '<h1 id="firstHeading" class="firstHeading">Wells Gray-Clearwater Volcanic Field</h1>' +
+          '<div id="bodyContent">' +
+          "<p><b>Wells Gray-Clearwater Volcanic Field</b> is a large potentially active volcanic field in central-east BC, situated north of Kamloops. " +
+          "sandstone rock formation in the southern part of the " +
+          "Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) " +
+          "south west of the nearest large town, Alice Springs; 450&#160;km " +
+          "(280&#160;mi) by road. Kata Tjuta and Uluru are the two major " +
+          "features of the Uluru - Kata Tjuta National Park. Uluru is " +
+          "sacred to the Pitjantjatjara and Yankunytjatjara, the " +
+          "Aboriginal people of the area. It has many springs, waterholes, " +
+          "rock caves and ancient paintings. Uluru is listed as a World " +
+          "Heritage Site.</p>" +
+          '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">' +
+          "https://en.wikipedia.org/w/index.php?title=Uluru</a> " +
+          "(last visited June 22, 2009).</p>" +
+          "</div>" +
+          "</div>";
+        const infowindowThree = new google.maps.InfoWindow({
+          content: contentStringThree,
+        });
+        const contentStringFour =
+          '<div id="content">' +
+          '<div id="siteNotice">' +
+          "</div>" +
+          '<h1 id="firstHeading" class="firstHeading">Wells Gray-Clearwater Volcanic Field</h1>' +
+          '<div id="bodyContent">' +
+          "<p><b>Wells Gray-Clearwater Volcanic Field</b> is a large potentially active volcanic field in central-east BC, situated north of Kamloops. " +
+          "sandstone rock formation in the southern part of the " +
+          "Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) " +
+          "south west of the nearest large town, Alice Springs; 450&#160;km " +
+          "(280&#160;mi) by road. Kata Tjuta and Uluru are the two major " +
+          "features of the Uluru - Kata Tjuta National Park. Uluru is " +
+          "sacred to the Pitjantjatjara and Yankunytjatjara, the " +
+          "Aboriginal people of the area. It has many springs, waterholes, " +
+          "rock caves and ancient paintings. Uluru is listed as a World " +
+          "Heritage Site.</p>" +
+          '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">' +
+          "https://en.wikipedia.org/w/index.php?title=Uluru</a> " +
+          "(last visited June 22, 2009).</p>" +
+          "</div>" +
+          "</div>";
+        const infowindowFour = new google.maps.InfoWindow({
+          content: contentStringFour,
+        });
+        const contentStringFive =
+          '<div id="content">' +
+          '<div id="siteNotice">' +
+          "</div>" +
+          '<h1 id="firstHeading" class="firstHeading">Wells Gray-Clearwater Volcanic Field</h1>' +
+          '<div id="bodyContent">' +
+          "<p><b>Wells Gray-Clearwater Volcanic Field</b> is a large potentially active volcanic field in central-east BC, situated north of Kamloops. " +
+          "sandstone rock formation in the southern part of the " +
+          "Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) " +
+          "south west of the nearest large town, Alice Springs; 450&#160;km " +
+          "(280&#160;mi) by road. Kata Tjuta and Uluru are the two major " +
+          "features of the Uluru - Kata Tjuta National Park. Uluru is " +
+          "sacred to the Pitjantjatjara and Yankunytjatjara, the " +
+          "Aboriginal people of the area. It has many springs, waterholes, " +
+          "rock caves and ancient paintings. Uluru is listed as a World " +
+          "Heritage Site.</p>" +
+          '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">' +
+          "https://en.wikipedia.org/w/index.php?title=Uluru</a> " +
+          "(last visited June 22, 2009).</p>" +
+          "</div>" +
+          "</div>";
+        const infowindowFive = new google.maps.InfoWindow({
+          content: contentStringFive,
+        });
+        // Add some markers to the map.
+        // Note: The code uses the JavaScript Array.prototype.map() method to
+        // create an array of markers based on a given "locations" array.
+        // The map() method here has nothing to do with the Google Maps API.
+        const marker = new google.maps.Marker({
+          position: silverthrone,
+          map,
+          title: "Silverthrone Caldera; Garibaldi Volcanic Belt",
+          label: "A"
           });
-    
-          // Add a marker clusterer to manage the markers.
-          new MarkerClusterer(map, markers, {
-            imagePath:
-              "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
+        const markerTwo = new google.maps.Marker({
+          position: wellsGray,
+          map,
+          title: "wells Gray-Clearwater Volcanic Field",
+          label: "B"
+          });
+        const markerThree = new google.maps.Marker({
+          position: edziza,
+          map,
+          title: "Mount Edziza; Stikine Volcanic Belt",
+          label: "C"
+          }); 
+        const markerFour = new google.maps.Marker({
+          position: rabbit,
+          map,
+          title: "Rabbit Mountain; Wrangell Volcanic Belt",
+          label: "D"
+          }); 
+        const markerFive = new google.maps.Marker({
+          position: anahim,
+          map,
+          title: "Anahim Mountain; Anahim Volcanic Belt",
+          label: "E"
+          });
+        marker.addListener("click", () => {
+          infowindow.open(map, marker);
+          });
+        markerTwo.addListener("click", () => {
+          infowindowTwo.open(map, markerTwo);
+          });
+        markerThree.addListener("click", () => {
+          infowindowThree.open(map, markerThree);
+          });
+        markerFour.addListener("click", () => {
+          infowindowFour.open(map, markerFour);
+          });
+        markerFive.addListener("click", () => {
+          infowindowFive.open(map, markerFive);
           });
          }
-      
-        const locations = [
-          { lat:  51.530268, lng: -126.113613 },
-          { lat:  52.330785, lng: -120.570042 },
-          { lat:  57.732114, lng: -130.635669 },
-          { lat:  60.684903, lng: -138.520164 },
-          { lat:  52.334561, lng: -120.569570 },
-        ];
-    
     </script>
   </head>
   <body>
