@@ -39,6 +39,9 @@
         const edziza = { lat:  57.732114, lng: -130.635669 };
         const rabbit = { lat:  61.918723, lng: -141.006147 };
         const anahim = { lat:  52.758798, lng: -125.625000 };
+ 
+
+
 
         // The map, centered over British Columbia
         const map = new google.maps.Map(document.getElementById("map"), {
@@ -46,7 +49,8 @@
           center: bc,
           //Adds the ability to choose the base map
           mapTypeControlOptions: {
-          mapTypeIds: ["satellite", "hybrid", "terrain"],}
+          mapTypeIds: ["satellite", "hybrid", "terrain"], 
+        } 
         });
         const contentStringOne =
           '<div id="content">' +
@@ -54,19 +58,17 @@
           "</div>" +
           '<h1 id="firstHeading" class="firstHeading">Silverthrone Caldera</h1>' +
           '<div id="bodyContent">' +
-          "<p><b>Silverthrone Caldera</b>, a volcano found in the <b>Garibaldi Volcanic belt</b>, is a large " +
-          "sandstone rock formation in the southern part of the " +
-          "Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) " +
-          "south west of the nearest large town, Alice Springs; 450&#160;km " +
-          "(280&#160;mi) by road. Kata Tjuta and Uluru are the two major " +
-          "features of the Uluru - Kata Tjuta National Park. Uluru is " +
-          "sacred to the Pitjantjatjara and Yankunytjatjara, the " +
-          "Aboriginal people of the area. It has many springs, waterholes, " +
-          "rock caves and ancient paintings. Uluru is listed as a World " +
-          "Heritage Site.</p>" +
-          '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">' +
-          "https://en.wikipedia.org/w/index.php?title=Uluru</a> " +
-          "(last visited June 22, 2009).</p>" +
+          "<p><b>Silverthrone Caldera</b>, a volcano found northwest of Vancouver in the <b>Garibaldi Volcanic belt</b>. " +
+          "Silverthrone Caldera is very difficult to get to due to its remoteness, and can only be accessed " +
+          "by helicopter or through a very difficult hike along the river valleys. " +
+          "The larger area that Silverthrone Caldera is found in,the Garibaldi Volcanic belt, which includes mostly " +
+          " dormant and eroded subglacial volcanoes. Silverthrone Caldera lies at the far north edge of the Garibaldi volcanic belt " +
+          "and little is known about its geology, while the southern area of the belt is much more well known, with the last eruption  " +
+          "occuring 9300 years ago. Interestingly, obsidian was collected at mount Garibaldi by the Squamish nation" +
+          "for creating tools in the pre-European contact era</p>" +
+          '<p>Attribution: Garibaldi Volcanic Belt, <a href="https://en.wikipedia.org/wiki/Garibaldi_Volcanic_Belt">' +
+          "https://en.wikipedia.org/wiki/Garibaldi_Volcanic_Belt</a> " +
+          "(last visited February 1, 2021).</p>" +
           "</div>" +
           "</div>";
         const infowindow = new google.maps.InfoWindow({
@@ -78,19 +80,15 @@
           "</div>" +
           '<h1 id="firstHeading" class="firstHeading">Wells Gray-Clearwater Volcanic Field</h1>' +
           '<div id="bodyContent">' +
-          "<p><b>Wells Gray-Clearwater Volcanic Field</b> is a large potentially active volcanic field in central-east BC, situated north of Kamloops. " +
-          "sandstone rock formation in the southern part of the " +
-          "Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) " +
-          "south west of the nearest large town, Alice Springs; 450&#160;km " +
-          "(280&#160;mi) by road. Kata Tjuta and Uluru are the two major " +
-          "features of the Uluru - Kata Tjuta National Park. Uluru is " +
-          "sacred to the Pitjantjatjara and Yankunytjatjara, the " +
-          "Aboriginal people of the area. It has many springs, waterholes, " +
-          "rock caves and ancient paintings. Uluru is listed as a World " +
-          "Heritage Site.</p>" +
-          '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">' +
-          "https://en.wikipedia.org/w/index.php?title=Uluru</a> " +
-          "(last visited June 22, 2009).</p>" +
+          "<p><b>Wells Gray-Clearwater Volcanic Field</b>, also known as the <b> Clearwater Cone Group </b> is " +
+          "located in east-central BC, north of Kamloops. The volcanic field can be found within <b> Wells Gray Provincial Park </b> " +
+          "where many of the volcanic sites can be viewed along the roads and hiking trails within the park. " +
+          "The volcanic field is known to produce explosive lava eruptions that eject molten rocks up to hundreds of metres in the air. " +
+          "While there is low risk to humans from eruptions at these volcanic sites, it is possible for them to start forest fires. " +
+          "</p>" +
+          '<p>Attribution: Wells Gray-Clearwater volcanic field, <a href="https://en.wikipedia.org/wiki/Wells_Gray-Clearwater_volcanic_field">' +
+          "https://en.wikipedia.org/wiki/Wells_Gray-Clearwater_volcanic_field</a> " +
+          "(last visited February 2, 2021).</p>" +
           "</div>" +
           "</div>";
         const infowindowTwo = new google.maps.InfoWindow({
@@ -100,21 +98,17 @@
           '<div id="content">' +
           '<div id="siteNotice">' +
           "</div>" +
-          '<h1 id="firstHeading" class="firstHeading">Wells Gray-Clearwater Volcanic Field</h1>' +
+          '<h1 id="firstHeading" class="firstHeading">Mount Edziza</h1>' +
           '<div id="bodyContent">' +
-          "<p><b>Wells Gray-Clearwater Volcanic Field</b> is a large potentially active volcanic field in central-east BC, situated north of Kamloops. " +
+          "<p><b>Mount Edziza</b> is a large potentially active volcanic field in central-east BC, situated north of Kamloops. " +
           "sandstone rock formation in the southern part of the " +
-          "Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) " +
-          "south west of the nearest large town, Alice Springs; 450&#160;km " +
-          "(280&#160;mi) by road. Kata Tjuta and Uluru are the two major " +
-          "features of the Uluru - Kata Tjuta National Park. Uluru is " +
-          "sacred to the Pitjantjatjara and Yankunytjatjara, the " +
-          "Aboriginal people of the area. It has many springs, waterholes, " +
-          "rock caves and ancient paintings. Uluru is listed as a World " +
-          "Heritage Site.</p>" +
-          '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">' +
-          "https://en.wikipedia.org/w/index.php?title=Uluru</a> " +
-          "(last visited June 22, 2009).</p>" +
+          "Mount Edziza is part of the Stikine volcanic belt, also known as the Northern Cordilleran " +
+          "Volcanic Province. This is the largest volcanic province in Canada including over 100 volcanoes that " +
+          "have been active in the last 1.8 million years, three of which have erupted in the last 360 years. " +
+          "</p>" +
+          '<p>Attribution: Northern Cordilleran Volcanic Province, <a href="https://en.wikipedia.org/wiki/Northern_Cordilleran_Volcanic_Province">' +
+          "https://en.wikipedia.org/wiki/Northern_Cordilleran_Volcanic_Province</a> " +
+          "(last visited February 1, 2021).</p>" +
           "</div>" +
           "</div>";
         const infowindowThree = new google.maps.InfoWindow({
@@ -124,21 +118,18 @@
           '<div id="content">' +
           '<div id="siteNotice">' +
           "</div>" +
-          '<h1 id="firstHeading" class="firstHeading">Wells Gray-Clearwater Volcanic Field</h1>' +
+          '<h1 id="firstHeading" class="firstHeading">Rabbit Mountain</h1>' +
           '<div id="bodyContent">' +
-          "<p><b>Wells Gray-Clearwater Volcanic Field</b> is a large potentially active volcanic field in central-east BC, situated north of Kamloops. " +
-          "sandstone rock formation in the southern part of the " +
-          "Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) " +
-          "south west of the nearest large town, Alice Springs; 450&#160;km " +
-          "(280&#160;mi) by road. Kata Tjuta and Uluru are the two major " +
-          "features of the Uluru - Kata Tjuta National Park. Uluru is " +
-          "sacred to the Pitjantjatjara and Yankunytjatjara, the " +
-          "Aboriginal people of the area. It has many springs, waterholes, " +
-          "rock caves and ancient paintings. Uluru is listed as a World " +
-          "Heritage Site.</p>" +
-          '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">' +
-          "https://en.wikipedia.org/w/index.php?title=Uluru</a> " +
-          "(last visited June 22, 2009).</p>" +
+          "<p><b>Wells Gray-Clearwater Volcanic Field</b> is a relatively small eroded volcanic outcrop found " +
+          "in the <b> Wrangell volcanic field </b>, which stretches from eastern Alaska to " +
+          "Southwestern Yukon. The majority of the field is found within Alaska along with its largest " +
+          "volcanoes,<b> Rabbit Mountain</b> and <b>Felsite Peak</b> can be found within the Yukon. " +
+          "The Canadian portion of the field features much older volcanic outcrops, while the younger more recently active " +
+          "volcanoes such as <b>Mount Wrangell</b> and <b>Mount Churchill</b> have erupted in the last 50,000 and 2000 years respectively.  " +
+          "</p>" +
+          '<p>Attribution: Wrangell volcanic field, <a href="https://en.wikipedia.org/wiki/Wrangell_Volcanic_Field">' +
+          "https://en.wikipedia.org/wiki/Wrangell_Volcanic_Field</a> " +
+          "(last visited February 2, 2021).</p>" +
           "</div>" +
           "</div>";
         const infowindowFour = new google.maps.InfoWindow({
@@ -148,21 +139,17 @@
           '<div id="content">' +
           '<div id="siteNotice">' +
           "</div>" +
-          '<h1 id="firstHeading" class="firstHeading">Wells Gray-Clearwater Volcanic Field</h1>' +
+          '<h1 id="firstHeading" class="firstHeading">Anahim Peak</h1>' +
           '<div id="bodyContent">' +
-          "<p><b>Wells Gray-Clearwater Volcanic Field</b> is a large potentially active volcanic field in central-east BC, situated north of Kamloops. " +
-          "sandstone rock formation in the southern part of the " +
-          "Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) " +
-          "south west of the nearest large town, Alice Springs; 450&#160;km " +
-          "(280&#160;mi) by road. Kata Tjuta and Uluru are the two major " +
-          "features of the Uluru - Kata Tjuta National Park. Uluru is " +
-          "sacred to the Pitjantjatjara and Yankunytjatjara, the " +
-          "Aboriginal people of the area. It has many springs, waterholes, " +
-          "rock caves and ancient paintings. Uluru is listed as a World " +
-          "Heritage Site.</p>" +
-          '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">' +
-          "https://en.wikipedia.org/w/index.php?title=Uluru</a> " +
-          "(last visited June 22, 2009).</p>" +
+          "<p><b>Anahim Peak</b> is a large volcanic cone in the northwest part of the <b>Anahim Volcanic Belt</b> " +
+          "The Anahim volcanic belt stretches from Vancouver Island to Quesnel, BC and contains three volcanic ranges. " +
+          "Anahim Peak can be found sitting solitarily between the <b>Rainbow Range</b> and the <b>Ilgachuz Range</b>" +
+          "There have been no eruption since the <b>Nazko Cone</b> erupted 7200 years ago, however " +
+          "volcanic activity resulted in a series of earthquakes in 2009. " +
+          "</p>" +
+          '<p>Attribution: Anahim Volcanic Belt, <a href="https://en.wikipedia.org/wiki/Anahim_Volcanic_Belt">' +
+          "https://en.wikipedia.org/wiki/Anahim_Volcanic_Belt</a> " +
+          "(last visited February 2, 2021).</p>" +
           "</div>" +
           "</div>";
         const infowindowFive = new google.maps.InfoWindow({
@@ -183,24 +170,28 @@
           map,
           title: "wells Gray-Clearwater Volcanic Field",
           label: "B"
+          
           });
         const markerThree = new google.maps.Marker({
           position: edziza,
           map,
           title: "Mount Edziza; Stikine Volcanic Belt",
           label: "C"
+          
           }); 
         const markerFour = new google.maps.Marker({
           position: rabbit,
           map,
           title: "Rabbit Mountain; Wrangell Volcanic Belt",
           label: "D"
+          
           }); 
         const markerFive = new google.maps.Marker({
           position: anahim,
           map,
           title: "Anahim Mountain; Anahim Volcanic Belt",
           label: "E"
+          
           });
         marker.addListener("click", () => {
           infowindow.open(map, marker);
