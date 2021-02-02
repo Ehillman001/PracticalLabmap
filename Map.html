@@ -2,19 +2,18 @@
 <html>
   <head>
     <title>Active Volcanoes in Canada</title>
+    <!--This script contains the google API key, allowing me to use the map-->
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5a1FoKmbmQ1djPh6pRx7oiknBf3ACNOE&callback=initMap&libraries=&v=weekly"
       defer
     ></script>
     <style type="text/css">
       /* Set the size of the div element that contains the map */
-    /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
       #map {
       height: 100%;
       }
 
-      /* Optional: Makes the sample page fill the window. */
+      /*  Makes the page fill the window. */
       html,
       body {
         height: 100%;
@@ -32,7 +31,7 @@
     <script>
       // Initialize and add the map
       function initMap() {
-        // The location of British Columbia
+        // The location of British Columbia for center, and the locations of the mountains 
         const bc = { lat: 55.507, lng: -125.247 };
         const silverthrone = { lat: 51.442, lng: -126.300 };
         const wellsGray = { lat:  52.330, lng: -120.570 };
@@ -52,6 +51,7 @@
           mapTypeIds: ["satellite", "hybrid", "terrain"], 
         } 
         });
+        // clickable content containing info on the volcano and its volcanic range
         const contentStringOne =
           '<div id="content">' +
           '<div id="siteNotice">' +
@@ -71,6 +71,7 @@
           "(last visited February 1, 2021).</p>" +
           "</div>" +
           "</div>";
+        // links the info into the infowindow 
         const infowindow = new google.maps.InfoWindow({
           content: contentStringOne,
         });
@@ -155,10 +156,7 @@
         const infowindowFive = new google.maps.InfoWindow({
           content: contentStringFive,
         });
-        // Add some markers to the map.
-        // Note: The code uses the JavaScript Array.prototype.map() method to
-        // create an array of markers based on a given "locations" array.
-        // The map() method here has nothing to do with the Google Maps API.
+        // Add markers connected to their respective positions and content
         const marker = new google.maps.Marker({
           position: silverthrone,
           map,
@@ -170,29 +168,27 @@
           map,
           title: "wells Gray-Clearwater Volcanic Field",
           label: "B"
-          
           });
         const markerThree = new google.maps.Marker({
           position: edziza,
           map,
           title: "Mount Edziza; Stikine Volcanic Belt",
           label: "C"
-          
           }); 
         const markerFour = new google.maps.Marker({
           position: rabbit,
           map,
           title: "Rabbit Mountain; Wrangell Volcanic Belt",
           label: "D"
-          
           }); 
         const markerFive = new google.maps.Marker({
           position: anahim,
           map,
           title: "Anahim Mountain; Anahim Volcanic Belt",
           label: "E"
-          
           });
+        // "Listener" highlights the marker when hovered over, allowing
+        // the info window to appear when clicked
         marker.addListener("click", () => {
           infowindow.open(map, marker);
           });
